@@ -44,22 +44,22 @@
 //	system("pause");
 //	return 0;
 //}
-int main()
-{
-	int i = 0;
-	int count = 0;
-	for (i = 1000; i <= 2000; i++)
-	{
-		if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0 )
-		{
-			printf("%d ", i);
-			count++;
-		}
-	}
-	printf("count=%d", count);
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 1000; i <= 2000; i++)
+//	{
+//		if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0 )
+//		{
+//			printf("%d ", i);
+//			count++;
+//		}
+//	}
+//	printf("count=%d", count);
+//	system("pause");
+//	return 0;
+//}
 ////数字的交换
 //int main()
 //{
@@ -174,26 +174,26 @@ int main()
 //	system("pause");
 //	return 0;
 //}
-//int main()
-//{
-//	int a = 0;
-//	int b = 0;
-//	scanf("%d%d", &a, &b);
-//	while (a != b)
-//	{
-//		if (a > b)
-//		{
-//			a = a - b;
-//		}
-//		else
-//		{
-//			b = b - a;
-//		}
-//	}
-//	printf("最大公约数是%d", a);
-//	system("pause");
-//	return 0;
-////}
+int main()
+{
+	int a = 0;
+	int b = 0;
+	scanf("%d%d", &a, &b);
+	while (a != b)
+	{
+		if (a > b)
+		{
+			a = a - b;
+		}
+		else
+		{
+			b = b - a;
+		}
+	}
+	printf("最大公约数是%d", a);
+	system("pause");
+	return 0;
+}
 //int main()
 //{
 //	int a[3] = { 1, 2, 3 };

@@ -604,3 +604,16 @@
 //	system("pause");
 //	return 0;
 //}
+int f()
+{
+	static int count = 0;
+	return ++count;
+}
+int main()
+{
+	int a;
+	a = f() - f() * f();
+	printf("%d", a);
+	system("pause");
+	return 0;
+}

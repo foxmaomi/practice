@@ -157,6 +157,7 @@
 //}
 int main()
 {
+	//指针数组
 	//int arr[10] = { 0 };
 	//int *p = arr;
 	//*(p + i) == *(arr + i) == arr[i]
@@ -173,7 +174,7 @@ int main()
 		int j = 0;
 		for (j = 0; j < sz2; j++)
 		{
-			printf("%d ", a4[i][j]);
+			printf("%d ", a4[i][j]);//a4[i]+j  ==  a4[i][j]
 		}	
 		printf("\n");
 	}

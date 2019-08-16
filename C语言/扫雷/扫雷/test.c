@@ -20,7 +20,7 @@ void game()
 	Initboard(show, ROWS, COLS,'?');
 	//²¼ÖÃÀ×
 	Setmine(mine, ROW, COL);
-	//Display(mine, ROW, COL);
+	Display(mine, ROW, COL);
      Display(show, ROW, COL);
 	 Findmine(mine,show, ROW, COL);
 

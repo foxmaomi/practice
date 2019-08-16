@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<math.h>
 #include<time.h>
-#define EASY_COUNT  10
+#define EASY_COUNT  82
 #define ROW 9
 #define COL 9
 #define ROWS ROW+2

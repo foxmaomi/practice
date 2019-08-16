@@ -12,7 +12,7 @@
 	//2. Õ¹¿ªÒ»Æ¬
 	//
 
-#define EASY_COUNT 10
+#define EASY_COUNT 80
 	//>> >> >> > 91c89a768dd2b4f013122350fc15b002c60c46dc
 
 #define ROW 9

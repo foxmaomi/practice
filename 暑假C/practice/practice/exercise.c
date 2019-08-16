@@ -174,26 +174,26 @@
 //	system("pause");
 //	return 0;
 //}
-int main()
-{
-	int a = 0;
-	int b = 0;
-	scanf("%d%d", &a, &b);
-	while (a != b)
-	{
-		if (a > b)
-		{
-			a = a - b;
-		}
-		else
-		{
-			b = b - a;
-		}
-	}
-	printf("最大公约数是%d", a);
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	while (a != b)
+//	{
+//		if (a > b)
+//		{
+//			a = a - b;
+//		}
+//		else
+//		{
+//			b = b - a;
+//		}
+//	}
+//	printf("最大公约数是%d", a);
+//	system("pause");
+//	return 0;
+//}
 //int main()
 //{
 //	int a[3] = { 1, 2, 3 };

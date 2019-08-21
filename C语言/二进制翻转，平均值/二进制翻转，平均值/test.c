@@ -29,26 +29,26 @@
 //
 //}
 
-//unsigned int reverse_bit(unsigned int value)
-//{
-//	int i = 0;
-//	unsigned int sum = 0;
-//	for (i = 0; i < 32; i++)
-//	{
-//		sum += ((value >> i) & 1) * pow(2, 31 - i);
-//	}
-//	return sum;
-//
-//}
-//int main()
-//{
-//	int value = 25;
-//	int ret = reverse_bit(value);
-//	printf("%u\n", ret);
-//	system("pause");
-//	return 0;
-//
-//}
+unsigned int reverse_bit(unsigned int value)
+{
+	int i = 0;
+	unsigned int sum = 0;
+	for (i = 0; i < 32; i++)
+	{
+		sum += ((value >> i) & 1) * pow(2, 31 - i);
+	}
+	return sum;
+
+}
+int main()
+{
+	int value = 25;
+	int ret = reverse_bit(value);
+	printf("%u\n", ret);
+	system("pause");
+	return 0;
+
+}
 //1.不使用（a+b）/2这种方式，求两个数的平均值。 
 	//int main()
 	//{

@@ -56,3 +56,32 @@
 //	return 0;
 //}
 
+int main()
+{
+	int arr[] = { 1, -2, 3, 3,  -4, 7, 2, -5 };
+	int max = 0x80000000;//-2147483648
+	int sum = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		if (sum>0 && sum>max)
+		{
+				max = sum;
+		}
+		if (sum < 0)
+		{
+			sum = arr[i];
+		}
+		else
+		{
+			sum = sum + arr[i];
+		}
+	}
+	printf("max = %d,sum = %d\n", max, sum);
+}
+.........
+.
+
+.
+...

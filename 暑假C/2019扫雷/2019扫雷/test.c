@@ -28,6 +28,8 @@ void game()
 	//Display(show, ROW, COL);
 	//排查雷；
 	Findmine(mine, show, ROW, COL);
+	//保证玩家第一次不被炸死
+	
 }
 
 void test()

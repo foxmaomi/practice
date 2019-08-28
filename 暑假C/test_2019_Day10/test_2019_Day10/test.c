@@ -70,3 +70,53 @@
 //	printf("%d\n", strlen(a));
 //	return 0;
 //}
+
+
+//
+int main()
+{
+	char arr[] = "faskhgsdf";
+	char str[255] = { 0 };
+	int ret = 0;
+	int i = 0;
+	for (i = 0; i < strlen(arr); i++)
+	{
+		ret = arr[i];
+		str[ret]++;
+	}
+	for (i = 0; i < 255; i++)
+	{
+		printf("%d ", str[i]);
+	}
+	for (i = 0; i < 255; i++)
+	{
+		if (str[i] == 1)
+		{
+			ret = i;
+			break;
+		}
+	}
+	printf("%c\n", ret);
+}
+//
+//int main()
+//{
+//	char str[] = "abds%*&34dfs";  // 定义一个字符数组，存放待转换为ASCII码的字符串
+//	int AsciiNum[20];  // 定义一个整型数组，存放字符所对应的ASCII码值，数组大小根据字符串长度进行设置
+//	int i;
+//	int sz = strlen(str);
+//	int count = 0;
+//	// 将字符串的每个字符逐个赋值给整型数组AsciiNum，即实现字符到ASCII码值的转换
+//	for (i = 0; i<strlen(str); i++)
+//	{
+//		AsciiNum[i] = str[i];
+//		count++;
+//		// 最后数组AsciiNum就是字符串每个字符所对应ASCII码值的数组
+//	}
+//	for (i = 0; i < 20; i++)
+//	{
+//		printf("%d ", AsciiNum[i]);
+//	}
+//	printf("\n");
+//	printf("%d %d", sz, count);
+//}

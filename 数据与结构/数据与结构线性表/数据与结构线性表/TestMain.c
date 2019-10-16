@@ -15,9 +15,17 @@
 
 int main()
 {
-	SList mylist;
-	SListInit(&mylist);
-	SListNode *p;
+	//SeqList mylist;
+	//SeqListInit(&mylist, SEQLIST_DEFAULT_SIZE);
+	//SList mylist;
+	//SListInit(&mylist);
+	//SCList mylist;
+	//SCListInit(&mylist);
+	//DList mylist;
+	//DListInit(&mylist);
+	DCList mylist;
+	DCListInit(&mylist);
+	DCListNode *p;
 	int select = 1;
 	int flag = 1;
 	DataType item, key, ret, pos;

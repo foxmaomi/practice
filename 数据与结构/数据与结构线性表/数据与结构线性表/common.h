@@ -9,6 +9,8 @@
 #include<assert.h>
 #include<stdbool.h>
 
+typedef enum{FALSE,TRUE}BOOL;
+
 #define DataType int 
 void swap(DataType *a, DataType *b)
 {

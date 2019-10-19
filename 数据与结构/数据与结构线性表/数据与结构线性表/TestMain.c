@@ -1,20 +1,39 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include"seqlist.h"
-#include"stack.h"
+#include"queue.h"
 
 int main()
 {
-	ListStack st;
-	ListStackInit(&st);
-	ListStackPush(&st, 1);
-	ListStackPush(&st, 2);
-	ListStackPush(&st, 3);
-	ListStackShow(st);
-	printf("=============\n");
-	ListStackPop(&st);
-	ListStackShow(st);
+	SeqQueue Q;
+	SeqQueueCyInit(&Q, _DEFAULT_QUEUE_SIZE_);
+	SeqQueueCyEn(&Q, 1);
+	SeqQueueCyEn(&Q, 2);
+	SeqQueueCyEn(&Q, 3);
+	SeqQueueCyEn(&Q, 4);
+	SeqQueueCyShow(&Q);
+	return 0;
 }
+
+
+
+
+
+//#include"seqlist.h"
+//#include"stack.h"
+//
+//int main()
+//{
+//	ListStack st;
+//	ListStackInit(&st);
+//	ListStackPush(&st, 1);
+//	ListStackPush(&st, 2);
+//	ListStackPush(&st, 3);
+//	ListStackShow(st);
+//	printf("=============\n");
+//	ListStackPop(&st);
+//	ListStackShow(st);
+//}
 
 
 

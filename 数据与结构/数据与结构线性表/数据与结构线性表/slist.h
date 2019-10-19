@@ -178,7 +178,7 @@ void SListReverse(SList *plist)
 		p1 = NULL;
 		p2 = plist->first->next;
 		p3 = p2->next;
-		plist->last = 2;
+		plist->last = p2;
 		while (p2 != NULL)
 		{
 			p2->next = p1;

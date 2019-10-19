@@ -98,6 +98,49 @@ typedef struct StackNode
 
 typedef StackNode * ListStack;
 
+void ListStackInit(ListStack *pst);
+DataType ListStackTop(ListStack *pst);
+void ListStackPush(ListStack *pst, DataType x);
+void ListStackPop(ListStack *pst);
+void ListStackShow(ListStack *pst);
+
+void ListStackInit(ListStack *pst)
+{
+	*pst = NULL;
+}
+
+DataType ListStackTop(ListStack *pst)
+{
+	assert(pst != NULL);
+	return (*pst)->data;
+}
+
+void ListStackPush(ListStack *pst, DataType x)
+{
+	StackNode *node = (StackNode*)malloc(sizeof(StackNode));
+	assert(node != NULL);
+	node->data = x;
+	node->next = *pst;
+	*pst = node;
+}
+
+void ListStackPop(ListStack *pst)
+{
+	StackNode *p = *pst;
+	*pst = p->next;
+	free(p);
+}
+
+void ListStackShow(ListStack pst)
+{
+	StackNode *p = pst;
+	while (p != NULL);
+	{
+		printf("%d\n", p->data);
+		p = p->next;
+	}
+}
+
 
 
 

@@ -5,15 +5,51 @@
 
 int main()
 {
-	SeqQueue Q;
-	SeqQueueCyInit(&Q, _DEFAULT_QUEUE_SIZE_);
-	SeqQueueCyEn(&Q, 1);
-	SeqQueueCyEn(&Q, 2);
-	SeqQueueCyEn(&Q, 3);
-	SeqQueueCyEn(&Q, 4);
-	SeqQueueCyShow(&Q);
+	SeqQueue Q;//
+	SeqQueueInit(&Q, DEFAULT_QUEUE_SIZE);
+	SeqQueueEn(&Q, 1); //
+	SeqQueueEn(&Q, 2);
+	SeqQueueEn(&Q, 3);
+	SeqQueueEn(&Q, 4);
+	SeqQueueEn(&Q, 5);
+	SeqQueueShow(&Q);
+	SeqQueueDe(&Q);
+	SeqQueueDe(&Q);
+	SeqQueueShow(&Q);
+	SeqQueueEn(&Q, 6);
+	SeqQueueEn(&Q, 7);
+	SeqQueueEn(&Q, 8);
+	SeqQueueEn(&Q, 9);
+	SeqQueueDestroy(&Q);
 	return 0;
 }
+
+
+//int main()
+//{
+//	SeqCyQueue CQ;
+//	SeqQueueCyInit(&CQ, _DEFAULT_QUEUE_SIZE_);
+//	SeqQueueCyEn(&CQ, 1);
+//	SeqQueueCyEn(&CQ, 2);
+//	SeqQueueCyEn(&CQ, 3);
+//	SeqQueueCyEn(&CQ, 4);
+//	SeqQueueCyEn(&CQ, 5);
+//
+//	SeqQueueCyDe(&CQ);
+//	SeqQueueCyDe(&CQ);
+//	SeqQueueCyShow(&CQ);      
+//	
+//	SeqQueueCyEn(&CQ, 6);
+//	SeqQueueCyEn(&CQ, 7);
+//	SeqQueueCyEn(&CQ, 8);
+//	SeqQueueCyEn(&CQ, 9);
+//
+//	SeqQueueCyShow(&CQ);
+//
+//	//SeqQueueCyEn(&CQ, 19);
+//	SeqQueueCyEn(&CQ, 19);
+//	return 0;
+//}
 
 
 

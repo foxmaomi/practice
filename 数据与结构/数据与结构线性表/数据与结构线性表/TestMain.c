@@ -5,22 +5,17 @@
 
 int main()
 {
-	SeqQueue Q;//
-	SeqQueueInit(&Q, DEFAULT_QUEUE_SIZE);
-	SeqQueueEn(&Q, 1); //
-	SeqQueueEn(&Q, 2);
-	SeqQueueEn(&Q, 3);
-	SeqQueueEn(&Q, 4);
-	SeqQueueEn(&Q, 5);
-	SeqQueueShow(&Q);
-	SeqQueueDe(&Q);
-	SeqQueueDe(&Q);
-	SeqQueueShow(&Q);
-	SeqQueueEn(&Q, 6);
-	SeqQueueEn(&Q, 7);
-	SeqQueueEn(&Q, 8);
-	SeqQueueEn(&Q, 9);
-	SeqQueueDestroy(&Q);
+	LinkQueue LQ;
+	LinkQueueInit(&LQ);
+	LinkQueueEn(&LQ, 1);
+	LinkQueueEn(&LQ, 2);
+	LinkQueueEn(&LQ, 3);
+	LinkQueueEn(&LQ, 4);
+	LinkQueueEn(&LQ, 5);
+
+	LinkQueueShow(&LQ);
+
+	LinkQueueDestroy(&LQ);
 	return 0;
 }
 

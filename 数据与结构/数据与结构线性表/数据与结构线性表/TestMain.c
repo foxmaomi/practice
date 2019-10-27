@@ -1,23 +1,47 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include"seqlist.h"
-#include"queue.h"
+
+#include"bintree.h"
 
 int main()
 {
-	LinkQueue LQ;
-	LinkQueueInit(&LQ);
-	LinkQueueEn(&LQ, 1);
-	LinkQueueEn(&LQ, 2);
-	LinkQueueEn(&LQ, 3);
-	LinkQueueEn(&LQ, 4);
-	LinkQueueEn(&LQ, 5);
-
-	LinkQueueShow(&LQ);
-
-	LinkQueueDestroy(&LQ);
+	char *str = "ABC##DE##F##G#H##";
+	BinTree bt;
+	BinTreeInit(&bt);
+	//BinTreeCreate(&bt);
+	BinTreeCreate(&bt, str);
+	printf("VLR:");
+	PreOrder(&bt);
+	printf("\n");
+	printf("LVR:");
+	InOrder(&bt);
+	printf("\n");
+	printf("LRV:");
+	PostOrder(&bt);
+	printf("\n");
 	return 0;
 }
+
+
+
+//#include"seqlist.h"
+//#include"queue.h"
+
+//int main()
+//{
+//	LinkQueue LQ;
+//	LinkQueueInit(&LQ);
+//	LinkQueueEn(&LQ, 1);
+//	LinkQueueEn(&LQ, 2);
+//	LinkQueueEn(&LQ, 3);
+//	LinkQueueEn(&LQ, 4);
+//	LinkQueueEn(&LQ, 5);
+//
+//	LinkQueueShow(&LQ);
+//
+//	LinkQueueDestroy(&LQ);
+//	return 0;
+//}
 
 
 //int main()

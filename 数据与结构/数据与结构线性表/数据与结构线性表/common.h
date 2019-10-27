@@ -11,7 +11,8 @@
 
 typedef enum{FALSE,TRUE}BOOL;
 
-#define DataType int 
+#define DataType char 
+//#define DataType int
 void swap(DataType *a, DataType *b)
 {
 	DataType tmp = *a;

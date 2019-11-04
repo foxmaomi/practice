@@ -1,81 +1,143 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 
-#include"heap.h"
 
-void main()
-{
-	int ar[] = { 27, 15, 19, 18, 28, 34, 65, 49, 25, 37 };
-	int n = sizeof(ar) / sizeof(int);
-	DataType top;
-	Heap hp;
-	int i;
-	HeapInit(&hp, n);
-
-	for (i = 0; i<n; ++i)
-	{
-		HeapInsert(&hp, ar[i]);
-	}
-
-	HeapShow(&hp);
-	printf("\n");
-	top = HeapTop(&hp);
-	printf("%d", top);
-	HeapRemove(&hp);
-	printf("\n");
-	HeapDestroy(&hp);
-}
-
+#include"bst.h"
 
 int main()
 {
-	//char *str = "ABC##DE##F##G#H##";
-	//char *str1 = "ABC##D#F##GE##H##";
-	char *vlr = "ABCDEFGH";
-	char *lvr = "CBEDFAGH";
-	char *lrv = "CEFDBHGA";
-	int n = strlen(lvr);
-	int i = 0, j = 0;
-	BinTree bt, bt1;
-	BinTreeInit(&bt);
-	BinTreeInit(&bt1);
-	//BinTreeCreate(&bt);
-	//BinTreeCreateByStr(&bt, str, &i);
-	//BinTreeCreateByStr(&bt1, str1, &j);
-	//BinTreeCreateBy_VLR_LVR(&bt, vlr, lvr, n);
-	BinTreeCreateBy_LVR_LRV(&bt, lvr, lrv, n);
-	printf("VLR   :");
-	PreOrder(&bt);
-	printf("\n");
-	printf("VLR NR:");
-	PreOrderNoR(&bt);
-	printf("\n");
-	printf("\n");
-	printf("LVR   :");
-	InOrder(&bt);
-	printf("\n");
-	printf("LVR NR:");
-	InOrderNoR(&bt);
-	printf("\n");
-	printf("\n");
-	printf("LRV   :");
-	PostOrder(&bt);
-	printf("\n");
-	printf("LRV NR:");
-	PostOrderNoR(&bt);
-	printf("\n");
-	printf("\n");
-	printf("Level:");
-	LevelOrder(&bt);
-	printf("\n");
-	printf("Size = %d\n", Size(&bt));
-	printf("Hegith = %d\n", Height(&bt));
-	BinTreeNode *p = Find(&bt, 'B');
-	p = Parent(&bt, 'H');
-	//Clone(&bt, &bt1);
-	bool flag = Equal(&bt, &bt1);
+	BSTree bst;
+	int i;
+	int j = 0;
+	int ar[] = { 45, 10, 24, 53, 12, 38, 21, 90, 30 };
+	int n = sizeof(ar) / sizeof(int);
+	BSTreeInit(&bst);
+
+	for (i = 0; i<n; ++i)
+	{
+		Insert(&bst, ar[i]);
+	}
+
+	printf("Min = %d\n", Min(bst));
+	printf("Max = %d\n", Max(bst));
+
+	Remove(&bst, 45);
+
 	return 0;
 }
+
+/*
+int main()
+{
+BSTree bst;
+int i;
+int j = 0;
+int ar[] = {45, 10, 24, 53, 12, 38, 21, 90, 30};
+int n = sizeof(ar) / sizeof(int);
+BSTreeInit(&bst);
+for(i=0; i<n; ++i)
+{
+Insert(&bst, ar[i]);
+}
+Sort(bst, ar, &j);
+return 0;
+}
+/*
+void main()
+{
+int ar[] = {27, 15,19, 18, 28, 34, 65, 49, 25, 37};
+int n = sizeof(ar) / sizeof(int);
+Heap hp;
+int i;
+HeapInit(&hp, n);
+for(i=0; i<n; ++i)
+{
+HeapInsert(&hp, ar[i]);
+}
+HeapShow(&hp);
+HeapRemove(&hp);
+HeapShow(&hp);
+HeapRemove(&hp);
+HeapShow(&hp);
+HeapDestroy(&hp);
+}
+
+
+//#include"heap.h"
+//
+//void main()
+//{
+//	int ar[] = { 27, 15, 19, 18, 28, 34, 65, 49, 25, 37 };
+//	int n = sizeof(ar) / sizeof(int);
+//	DataType top;
+//	Heap hp;
+//	int i;
+//	HeapInit(&hp, n);
+//
+//	for (i = 0; i<n; ++i)
+//	{
+//		HeapInsert(&hp, ar[i]);
+//	}
+//
+//	HeapShow(&hp);
+//	printf("\n");
+//	top = HeapTop(&hp);
+//	printf("%d", top);
+//	HeapRemove(&hp);
+//	printf("\n");
+//	HeapDestroy(&hp);
+//}
+//
+//
+//int main()
+//{
+//	//char *str = "ABC##DE##F##G#H##";
+//	//char *str1 = "ABC##D#F##GE##H##";
+//	char *vlr = "ABCDEFGH";
+//	char *lvr = "CBEDFAGH";
+//	char *lrv = "CEFDBHGA";
+//	int n = strlen(lvr);
+//	int i = 0, j = 0;
+//	BinTree bt, bt1;
+//	BinTreeInit(&bt);
+//	BinTreeInit(&bt1);
+//	//BinTreeCreate(&bt);
+//	//BinTreeCreateByStr(&bt, str, &i);
+//	//BinTreeCreateByStr(&bt1, str1, &j);
+//	//BinTreeCreateBy_VLR_LVR(&bt, vlr, lvr, n);
+//	BinTreeCreateBy_LVR_LRV(&bt, lvr, lrv, n);
+//	printf("VLR   :");
+//	PreOrder(&bt);
+//	printf("\n");
+//	printf("VLR NR:");
+//	PreOrderNoR(&bt);
+//	printf("\n");
+//	printf("\n");
+//	printf("LVR   :");
+//	InOrder(&bt);
+//	printf("\n");
+//	printf("LVR NR:");
+//	InOrderNoR(&bt);
+//	printf("\n");
+//	printf("\n");
+//	printf("LRV   :");
+//	PostOrder(&bt);
+//	printf("\n");
+//	printf("LRV NR:");
+//	PostOrderNoR(&bt);
+//	printf("\n");
+//	printf("\n");
+//	printf("Level:");
+//	LevelOrder(&bt);
+//	printf("\n");
+//	printf("Size = %d\n", Size(&bt));
+//	printf("Hegith = %d\n", Height(&bt));
+//	BinTreeNode *p = Find(&bt, 'B');
+//	p = Parent(&bt, 'H');
+//	//Clone(&bt, &bt1);
+//	bool flag = Equal(&bt, &bt1);
+//	return 0;
+//}
 
 //#include"bintree.h"
 //

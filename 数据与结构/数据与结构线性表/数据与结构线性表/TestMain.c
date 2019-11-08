@@ -1,30 +1,42 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 
+#include"sort.h"
 
-#include"bst.h"
 
-int main()
+void main()
 {
-	BSTree bst;
-	int i;
-	int j = 0;
-	int ar[] = { 45, 10, 24, 53, 12, 38, 21, 90, 30 };
+	//int ar[] = {49, 38, 65,97, 76, 13,27, 49};
+	int ar[] = { 9, 1, 2, 5, 7, 4, 8, 6, 3, 5 };
 	int n = sizeof(ar) / sizeof(int);
-	BSTreeInit(&bst);
-
-	for (i = 0; i<n; ++i)
-	{
-		Insert(&bst, ar[i]);
-	}
-
-	printf("Min = %d\n", Min(bst));
-	printf("Max = %d\n", Max(bst));
-
-	Remove(&bst, 45);
-
-	return 0;
+	PrintArray(ar, 0, n - 1);
+	TestSort(ar, 0, n - 1);
+	TestSrotEfficiency();
 }
+
+//#include"bst.h"
+//
+//int main()
+//{
+//	BSTree bst;
+//	int i;
+//	int j = 0;
+//	int ar[] = { 45, 10, 24, 53, 12, 38, 21, 90, 30 };
+//	int n = sizeof(ar) / sizeof(int);
+//	BSTreeInit(&bst);
+//
+//	for (i = 0; i<n; ++i)
+//	{
+//		Insert(&bst, ar[i]);
+//	}
+//
+//	printf("Min = %d\n", Min(bst));
+//	printf("Max = %d\n", Max(bst));
+//
+//	Remove(&bst, 45);
+//
+//	return 0;
+//}
 
 /*
 int main()

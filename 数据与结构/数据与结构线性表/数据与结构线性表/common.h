@@ -8,12 +8,13 @@
 #include<string.h>
 #include<assert.h>
 #include<stdbool.h>
+#include<time.h>
 
 typedef enum{FALSE,TRUE}BOOL;
 
-#define DataType char 
+#define DataType int 
 //#define DataType int
-void swap(DataType *a, DataType *b)
+void Swap(DataType *a, DataType *b)
 {
 	DataType tmp = *a;
 	*a = *b;

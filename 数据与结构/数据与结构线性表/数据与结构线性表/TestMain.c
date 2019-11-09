@@ -2,17 +2,33 @@
 
 
 #include"sort.h"
-
-
-void main()
+int main()
 {
-	//int ar[] = {49, 38, 65,97, 76, 13,27, 49};
+	//int ar[] = { 49, 38, 65, 97, 76, 13, 27, 49 };
 	int ar[] = { 9, 1, 2, 5, 7, 4, 8, 6, 3, 5 };
-	int n = sizeof(ar) / sizeof(int);
+	int n = sizeof(ar) / sizeof(ar[0]);
 	PrintArray(ar, 0, n - 1);
 	TestSort(ar, 0, n - 1);
 	TestSrotEfficiency();
+
 }
+
+//int main()
+//{
+//	printf("发光时代\n");
+////}
+
+//void main()
+//{
+//    int ar[] = {49, 38, 65,97, 76, 13,27, 49};
+//	//int ar[] = { 9, 1, 2, 5, 7, 4, 8, 6, 3, 5 };
+//	int n = sizeof(ar) / sizeof(int);
+//	PrintArray(ar, 0, n - 1);
+//	//InsertSort(ar, 0, n - 1);
+//	//PrintArray(ar, 0, n - 1);
+//	//TestSort(ar, 0, n - 1);
+//	//TestSrotEfficiency();
+//}
 
 //#include"bst.h"
 //
@@ -38,41 +54,41 @@ void main()
 //	return 0;
 //}
 
-/*
-int main()
-{
-BSTree bst;
-int i;
-int j = 0;
-int ar[] = {45, 10, 24, 53, 12, 38, 21, 90, 30};
-int n = sizeof(ar) / sizeof(int);
-BSTreeInit(&bst);
-for(i=0; i<n; ++i)
-{
-Insert(&bst, ar[i]);
-}
-Sort(bst, ar, &j);
-return 0;
-}
-/*
-void main()
-{
-int ar[] = {27, 15,19, 18, 28, 34, 65, 49, 25, 37};
-int n = sizeof(ar) / sizeof(int);
-Heap hp;
-int i;
-HeapInit(&hp, n);
-for(i=0; i<n; ++i)
-{
-HeapInsert(&hp, ar[i]);
-}
-HeapShow(&hp);
-HeapRemove(&hp);
-HeapShow(&hp);
-HeapRemove(&hp);
-HeapShow(&hp);
-HeapDestroy(&hp);
-}
+//
+//int main()
+//{
+//BSTree bst;
+//int i;
+//int j = 0;
+//int ar[] = {45, 10, 24, 53, 12, 38, 21, 90, 30};
+//int n = sizeof(ar) / sizeof(int);
+//BSTreeInit(&bst);
+//for(i=0; i<n; ++i)
+//{
+//Insert(&bst, ar[i]);
+//}
+//Sort(bst, ar, &j);
+//return 0;
+//}
+
+//void main()
+//{
+//int ar[] = {27, 15,19, 18, 28, 34, 65, 49, 25, 37};
+//int n = sizeof(ar) / sizeof(int);
+//Heap hp;
+//int i;
+//HeapInit(&hp, n);
+//for(i=0; i<n; ++i)
+//{
+//HeapInsert(&hp, ar[i]);
+//}
+//HeapShow(&hp);
+//HeapRemove(&hp);
+//HeapShow(&hp);
+//HeapRemove(&hp);
+//HeapShow(&hp);
+//HeapDestroy(&hp);
+//}
 
 
 //#include"heap.h"
@@ -538,7 +554,7 @@ HeapDestroy(&hp);
 //	}
 //}
 
-////#if 0
+
 //#include"seqlist.h"
 //int main()
 //{
@@ -659,4 +675,4 @@ HeapDestroy(&hp);
 //	}
 //	
 //}
-////#endif
+

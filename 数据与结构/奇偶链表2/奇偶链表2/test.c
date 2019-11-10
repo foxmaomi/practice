@@ -24,12 +24,11 @@ int main()
 	{
 		SListPushBack(&s, item);
 	}
-	findp_q(&s,&p, &q);
 	SListSort(&s);
-	//SListSort(&p);
-	//SListSort(&q);
+	findp_q(&s,&p, &q);
+	
 	SListShow(&s);
-	//SListShow(&p);
-	//SListShow(&q);
+	SListShow(&p);
+	SListShow(&q);
 	return 0;
 }

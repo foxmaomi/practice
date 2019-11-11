@@ -1,17 +1,111 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 
-#include"sort.h"
-int main()
+//#include"hashtable"
+#include"common.h"
+//#define P 7
+//现在有一个用来存放整数的Hash表，Hash表的存储单位称为桶，
+//每个桶能放3个整数，当一个桶中要放的元素超过3个时，
+//则要将新的元素存放在溢出桶中，每个溢出桶也能放3个元素，
+//多个溢出桶使用链表串起来。此Hash表的基桶数目为素数P，
+//Hash表的hash函数对P取模。代码定义如下：
+
+#define P 7
+#define NULL_DATA -1
+struct bucket_node
 {
-	//int ar[] = { 49, 38, 65, 97, 76, 13, 27, 49 };
-	int ar[] = { 9, 1, 2, 5, 7, 4, 8, 6, 3, 5 };
-	int n = sizeof(ar) / sizeof(ar[0]);
-	PrintArray(ar, 0, n - 1);
-	TestSort(ar, 0, n - 1);
-	TestSrotEfficiency();
+	int data[3];
+	struct bucket_node *next;
+};
+struct bucket_node hash_table[P];
+typedef struct bucket_node bucket_node;
+//现在假设hash_table已经初始化好了，
+//insert_new_element()函数目的是把一个新的值插入hash_table中，
+//元素插入成功时，函数返回0，否则返回-1，完成函数。
+void hash_tableInit()
+{
+	int i, j;
+	for (i = 0; i < P; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			hash_table[i].data[j] = NULL_DATA;
+		}
+	}
+}
+
+int Hash(DataType key)
+{
+	return (key % P);
+}
+
+//bool hash_table_full(int index)
+//{
+//	hash_table[index];
+//	bucket_node *p = pht[index];
+//	while (p != NULL && p->data != key)
+//		p = p->next;
+//	return p;
+//}
+
+int Insert_new_element(int new_element)
+{
+	int index = Hash(new_element);
+	//判断桶是否为满
+	hash_table_full(index);
+	bucket_node *s = (bucket_node *)malloc(sizeof(bucket_node));
+	if (s == NULL)
+		return NULL_DATA;
+	//s->data = x;
+	//s->link = hash_table[index];
+	//hash_table[index] = s;
 
 }
+
+
+////////////////////////////////////////////////
+int main()
+{
+	hash_tableInit();
+	//
+	int array[] = { 15, 14, 21, 87, 96, 293, 35, 24, 149, 19, 63, 16, 103, 77, 5, 153, 145, 356, 51, 68, 705, 453 };
+	for (int i = 0; i < sizeof(array) / sizeof(int); i++)
+	{
+		Insert_new_element(array[i]);
+	}
+	return 0;
+}
+//int main()
+//{
+//	HashTable ht;
+//	HashTableInit(ht);
+//}
+//#include"sort.h"
+//
+//void main()
+//{
+//	//int ar[] = {49, 38, 65,97, 76, 13,27, 49};
+//	//int ar[] = { 9, 1, 2, 5, 7, 4, 8, 6, 3 ,5};
+//	//int ar[] = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
+//	//int ar[] = {10, 6, 7, 1, 3, 9, 4, 2};
+//	int ar[] = { 278, 109, 63, 930, 589, 184, 505, 269, 8, 83 };
+//	int n = sizeof(ar) / sizeof(int);
+//	PrintArray(ar, 0, n - 1);
+//	TestSort(ar, 0, n - 1);
+//	TestSrotEfficiency();
+//}
+
+//#include"sort.h"
+//int main()
+//{
+//	//int ar[] = { 49, 38, 65, 97, 76, 13, 27, 49 };
+//	int ar[] = { 9, 1, 2, 5, 7, 4, 8, 6, 3, 5 };
+//	int n = sizeof(ar) / sizeof(ar[0]);
+//	PrintArray(ar, 0, n - 1);
+//	TestSort(ar, 0, n - 1);
+//	TestSrotEfficiency();
+//
+//}
 
 //int main()
 //{

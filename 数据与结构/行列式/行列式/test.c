@@ -46,7 +46,7 @@ polyty CreatePolyn(int m)
 void PrintPolyn(polyty head)
 {
 	nodetype *pt;
-	printf("\n The polynomial is :\n");
+	printf(" The polynomial is :");
 	pt = head->next;
 	while (pt != NULL)
 	{
@@ -117,11 +117,20 @@ void PolyAdd(polyty la, polyty lb)
 int main()
 {
 	int m = 0;
+	printf("请输入多项式a的元素个数");
 	scanf("%d", &m);
 	polyty psla = CreatePolyn(m);   //创建多项式a
+	printf("\n");
 	PrintPolyn(psla);
+	printf("\n");
+	printf("请输入多项式b的元素个数");
+	scanf("%d", &m);
 	polyty pslb = CreatePolyn(m);   //创建多项式b
+	printf("\n");
 	PrintPolyn(pslb);
+	printf("\n");
 	PolyAdd(psla, pslb);
+	PrintPolyn(psla);
+	printf("\n");
 	return 0;
 }

@@ -565,7 +565,7 @@ int main()
 //			while (scanf("%d", &item), item != -1)
 //			{
 //				SListPushFront(&mylist, item);
-//			}
+//			}6xcaq
 //			break;
 //		case 3:
 //			SListShowList(&mylist);

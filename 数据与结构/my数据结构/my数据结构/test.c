@@ -35,18 +35,24 @@ int main()
 			printf("请输入要插入的数据<-1结束>:>");
 			while (scanf("%d", &item), item != -1)
 			{
-				SListPushBack(&mylist, item);
+				SListPushBack(&mylist, item);//尾插法
 			}
 			break;
-		//		case 2:
-		//			printf("请输入要插入的数据<-1结束>：>");
-		//			while (scanf("%d", &item), item != -1)
-		//			{
-		//				SeqListPushFront(&mylist, item);
-		//			}
-		//			break;
+		case 2:
+			printf("请输入要插入的数据<-1结束>：>");
+			while (scanf("%d", &item), item != -1)
+			{
+				SListPushFront(&mylist, item);//头插法
+			}
+			break;
 		case 3:
-			SeqListShow(&mylist);
+			SListShow(&mylist);//显示
+			break;
+		case 4:
+			SListPopBack(&mylist);//尾删
+			break;
+		case 5:
+			SListPopFront(&mylist);
 			break;
 		default:
 			printf("输入错误，请重新输入.......\n");

@@ -23,7 +23,12 @@ Slistnode* Buynode(Datatype x)
 }
 void SlistInit(Slist* plist);
 void SListPushBack(Slist* plist, Datatype x);
-void SeqListShow(Slist* plist);
+void SListPushFront(Slist* plist, Datatype x);
+
+void SListShow(Slist* plist);
+
+bool SListPopBack(Slist* plist);
+bool SListPopFront(Slist* plist);
 void SlistInit(Slist* plist)
 {
 	Slistnode* p = Buynode(0);
@@ -41,11 +46,47 @@ void SListPushBack(Slist* plist, Datatype x)
 	plist->last = p;
 	plist->size++;
 }
-void SeqListShow(Slist* plist)
+void SListPushFront(Slist* plist, Datatype x)
+{
+	Slistnode* p = Buynode(x);
+	if (p == NULL)
+		return;
+	if (plist->first->next == NULL)
+		plist->last = p;
+	p->next = plist->first->next;
+	plist->first->next = p;
+}
+void SListShow(Slist* plist)
+{
+	Slistnode *p = plist->first->next;
+	if (p == NULL)
+		return;
+	while (p != NULL)
+	{
+		printf("%d->", p->data);
+		p = p->next;
+	}
+	printf("\n");
+}
+bool SListPopBack(Slist* plist)
+{
+	Slistnode* p = plist->last;
+	Slistnode* q = plist->first;
+	if (plist->first->next == NULL)
+		return true;
+	while (q->next != p)
+	{
+		q = q->next;
+	}
+	q->next = NULL;
+	plist->last = q;
+	free(p);
+	return true;
+}
+bool SListPopFront(Slist* plist)
 {
 
 }
-
 //SlistNode* _Buynode(DataType x)
 //{
 //	Slistnode *s = (Slistnode*)malloc(sizeof(Slistnode));

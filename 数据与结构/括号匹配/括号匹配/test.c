@@ -93,14 +93,6 @@ int main()
 	int flag = 0;
 	char s[10] = {0};
 	scanf("%s", s);
-	//int i = 0;
-	//scanf("%d", &i); 
-	//for (tmp = 0; tmp < i; i++)
-	//{
-	//	printf("input a char: ");
-	//	scanf("%c", &ch);//输入一个字符
-	//	getchar(); //过滤回车符
-	//}
 	
 	isValid(&s,&flag);
 	if (flag == 1)

@@ -6,7 +6,7 @@ class CGoods
 public:
 	void Register(char *n, int c, float p);
 	int GetCount();
-	float GetPrice;
+	float GetPrice();
 	float GetTotalPrice();
 protected:
 private:
@@ -15,3 +15,12 @@ private:
 	float price;
 	float total_prive;
 };
+//class Person
+//{
+//public:
+//	void showinfo();
+//public:
+//	char* _name;
+//	char*_sex;
+//	int _age;
+//};

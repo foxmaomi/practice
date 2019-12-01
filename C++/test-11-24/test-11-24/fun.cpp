@@ -9,9 +9,18 @@ void CGoods::Register(char *n, int c, float p)
 
 int CGoods::GetCount()
 {
+	return count;
+}
+float CGoods::GetPrice()
+{
 	return price;
 }
 float CGoods::GetTotalPrice()
 {
 	return count*price;
 }
+
+//void Person::showinfo()//指定showinfo是Person这个类域的
+//{
+//	cout << _name << "-" << _sex << "-" << _age << endl;
+//}

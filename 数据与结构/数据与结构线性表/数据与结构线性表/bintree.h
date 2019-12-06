@@ -332,6 +332,7 @@ bool _Equal(BinTreeNode *t1, BinTreeNode *t2)
 void PreOrderNoR(BinTree *t)
 {
 	_PreOrderNoR(t->root);
+
 }
 void _PreOrderNoR(BinTreeNode *t)
 {

@@ -5,6 +5,18 @@
 #include<assert.h>
 using namespace std;
 
+
+/*
+void main()
+{
+	string email = "2868283704@qq.com";
+	string substr("67.w");
+
+	size_t pos = email.find_first_of(substr);
+	cout << pos << endl;
+}
+
+/*
 namespace bit
 {
 	class string

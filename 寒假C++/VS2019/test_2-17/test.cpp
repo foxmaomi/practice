@@ -5,7 +5,6 @@
 using namespace std;
 
 #include<iostream>
-#include<vld.h>
 #include<assert.h>
 #include<string>
 #include<vector>

@@ -1,7 +1,136 @@
 ﻿#include<iostream>
 #include<list>
+#include<vector>
 using namespace std;
 
+void main()
+{
+	list<int> mylist = { 1,2,3,4,5,6,7,8,9,10 };
+	cout << "size = " << mylist.size() << endl;
+	cout << "front = " << mylist.front() << endl;
+	cout << "back = " << mylist.back() << endl;
+	for (const auto& e : mylist)
+		cout << e << "-->";
+	cout << "Over." << endl;
+}
+
+/*
+void main()
+{
+	list<int> mylist = { 1,2,3,4,5,6,7,8,9,10 };
+	auto it1 = mylist.begin();
+	cout << typeid(it1).name() << endl;
+	*it1 = 100;
+
+	const list<int> mylist1 = { 1,2,3,4,5,6,7,8,9,10 };
+	auto it2 = mylist.begin();
+	cout << typeid(it2).name() << endl;
+	*it2 = 100;
+}
+/*
+void main()
+{
+	list<int> mylist = { 1,2,3,4,5,6,7,8,9,10 };
+
+	for (const auto& e : mylist)
+		cout << e << "-->";
+	cout << "Over." << endl;
+
+	list<int>::iterator it = mylist.begin();
+	while (it != mylist.end())
+	{
+		cout << *it << "-->";
+		++it;
+	}
+	cout << "Over." << endl;
+
+	auto it1 = mylist.begin();
+	while (it1 != mylist.end())
+	{
+		cout << *it1 << "-->";
+		++it1;
+	}
+	cout << "Over." << endl;
+
+	auto rit = mylist.rbegin();
+	while (rit != mylist.rend())
+	{
+		cout << *rit << "-->";
+		++rit;
+	}
+	cout << "Over." << endl;
+
+	list<int>::reverse_iterator rit1 = mylist.rbegin();
+	while (rit1 != mylist.rend())
+	{
+		cout << *rit1 << "-->";
+		++rit1;
+	}
+	cout << "Over." << endl;
+	//auto it1 = mylist.begin();
+	//while (it1 != mylist.end())
+	//{
+	//	cout << *it << "-->";
+	//	++it1;
+	//}
+	//cout << "Over." << endl;
+}
+/*
+void main()
+{
+	//c++11
+	list<int> mylist = { 1,2,3,4,5,6,7,8,9,10 };
+	vector<int> v = { 1,2,3,4,5 }; //vector string
+
+	for (const auto& e : mylist)
+		cout << e << "-->";
+	cout << "Over." << endl;
+
+	for (const auto& e : v)
+		cout << e << " ";
+	cout << endl;
+
+	list<int>::iterator it = mylist.begin();
+	while (it != mylist.end())
+	{
+		cout << *it << "-->";
+		++it;
+	}
+	cout << "Over." << endl;
+
+	vector<int>::iterator vit = v.begin();
+	while (vit != v.end())
+	{
+		cout << *vit << "-->";
+		++vit;
+	}
+	cout << "Over." << endl;
+}
+
+/*
+//C+ + list() 构造空的list 
+//list(size_type n, const value_type & val = value_type()) 构造的list中包含n个值为val的元素 
+//list(const list & x) 拷贝构造函数 
+//list(InputIterator first, InputIterator last) 用[first, last)区间中的元素构造list
+void main()
+{
+	int ar[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int n = sizeof(ar) / sizeof(int);
+	//for (int i = 0; i < n; i++)
+	//{
+	//	cout << ar[i] << " "<<endl;
+	//}
+	list<int> mylist;
+	list<int> mylist1(10, 2);
+	list<int> mylist2(mylist1);
+	list<int> mylist3(ar, ar + n);
+	list<int> mylist4(mylist3.begin(), mylist3.end());
+	list<int> mylist5 = { 1, 2, 3, 4, 5 };
+		for (const auto& e : mylist5)
+		cout << e << "-->";
+	cout << "Over." << endl;
+}
+/*
 class Test
 {
 public:

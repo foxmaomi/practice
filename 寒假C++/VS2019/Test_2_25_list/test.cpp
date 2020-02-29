@@ -3,12 +3,45 @@
 #include<vector>
 using namespace std;
 
+
+void main()
+{
+	list<int> mylist = { 1,2,3,4,5,6,7,8,9,10 };
+	//auto关键字 自动推导变量的类型   自动；类型推断
+	auto pos = find(mylist.begin(), mylist.end(), 4);
+	auto pos1 = find(mylist.begin(), mylist.end(), 1);
+	auto pos2 = find(mylist.begin(), mylist.end(), 8);
+	cout << "pos = " << *pos << endl;
+	cout << "pos1 = " << *pos1 << endl;
+	cout << "pos2 = " << *pos2 << endl;
+	//mylist.push_front(100);
+	pos = mylist.erase(pos);
+	cout << "pos = " << *pos << endl;
+	cout << "pos1 = " << *pos1 << endl;
+	cout << "ppos2 = " << *pos2 << endl;
+}
+
+/*
 void main()
 {
 	list<int> mylist = { 1,2,3,4,5,6,7,8,9,10 };
 	cout << "size = " << mylist.size() << endl;
 	cout << "front = " << mylist.front() << endl;
 	cout << "back = " << mylist.back() << endl;
+	for (const auto& e : mylist)
+		cout << e << "-->";
+	cout << "Over." << endl;
+	//mylist.push_front(100);
+	//mylist.push_back(100);
+	//mylist.pop_front();
+	//mylist.pop_back();
+	//auto pos = mylist.begin();
+	auto pos = find(mylist.begin(), mylist.end(), 4);
+	//mylist.insert(pos, 100);
+	//mylist.clear();
+	cout << "pos = " << *pos << endl;
+	pos = mylist.erase(pos);
+	cout << "pos = " << *pos << endl;
 	for (const auto& e : mylist)
 		cout << e << "-->";
 	cout << "Over." << endl;

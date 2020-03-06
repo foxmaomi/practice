@@ -5,7 +5,40 @@
 using namespace std;
 
 
+struct A
+{
+	unsigned a : 19;
+	unsigned b : 11;
+	unsigned c : 4;
+	unsigned d : 29;
+	char index;
+};
 
+int main()
+{
+	int ret = sizeof(A);
+	cout << ret << endl;
+}
+
+
+/*
+struct S
+{
+	char a : 3;
+	char b : 4;
+	char c : 5;
+	char d : 4;
+};
+
+int main()
+{
+	int ret = sizeof(S);
+	cout << ret << endl;
+}
+
+
+
+/*
 int main()
 {
 	string s;

@@ -4,6 +4,81 @@
 #include<algorithm>
 using namespace std;
 
+
+
+int main(void)
+{
+	vector<int> array;
+	array.push_back(100);
+	array.push_back(300);
+	array.push_back(300);
+	array.push_back(300);
+	array.push_back(300);
+	array.push_back(500);
+	vector<int>::iterator itor;
+	for (itor = array.begin(); itor != array.end(); itor++)
+	{
+		if (*itor == 300)
+		{
+			itor = array.erase(itor);
+		}
+	}
+	for (itor = array.begin(); itor != array.end(); itor++)
+	{
+		cout << *itor << "";
+	}
+	return 0;
+}
+
+/*
+
+class Solution {
+public:
+	int MoreThanHalfNum_Solution(vector<int> numbers)
+	{
+		if (numbers.empty())
+			return 0;
+		//遍历每个元素，并记录次数；若与前一个元素相同，则次次数减一数加1，否则
+		int result = numbers[0];
+		int times = 1;//次数
+		for (int i = 1; i < numbers.size(); ++i)
+		{
+			if (times == 0)
+			{
+				//更新result的值为当前元素，并置次数为1
+				result = numbers[i];
+				times = 1;
+			}
+			else if (numbers[i] == result)
+			{
+				++times;  //相同加1
+			}
+			else
+			{
+				--times;    //不同减一
+			}
+		}
+		//判断result是否符合条件，
+		times = 0;
+		for (int i = 0; i < numbers.size(); ++i)
+		{
+			if (numbers[i] == result)
+				++times;
+		}
+		return (times > numbers.size() / 2) ? result : 0;
+	}
+};
+int main()
+{
+	vector<int> a = { 1,6,3,3,5,2,2,2,2,2 };
+	Solution s;
+	int ret = s.MoreThanHalfNum_Solution(a);
+	cout << ret << endl;
+}
+
+
+
+/*
 class Solution {
 public: int MoreThanHalfNum_Solution(vector<int> numbers)
 { // 因为用到了sort，时间复杂度O(NlogN)，并非最优 

@@ -3,6 +3,16 @@
 #include<vector>
 using namespace std;
 
+
+int main()
+{
+	int b=2;
+	const int* a = &b;
+
+}
+
+
+/*
 int main(void)
 {
 	vector<int>array;

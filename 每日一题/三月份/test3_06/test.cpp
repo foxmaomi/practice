@@ -3,6 +3,76 @@
 #include<stdio.h>
 #include<string>
 using namespace std;
+
+
+class ClassA
+{
+};
+
+int main()
+{
+	ClassA* pclassa = new ClassA[5];
+	delete pclassa;
+}
+
+/*
+int main()
+{
+	int a; float b, c;
+	scanf("%2d%3f%4f", &a, &b, &c);
+	printf("\na=%d,b=%d,c=%f\n", a, b, c);
+}
+
+
+
+/*
+void main()
+{
+	int n[][3] = { 10,20,30,40,50,60 };
+	int(*p)[3];
+	p = n;
+	cout << p[0][0] << "," << *(p[0] + 1) << (*p)[2] << endl;
+}
+
+/*
+int main()
+{
+	char str1[] = "Sample string";
+	char str2[40];
+	char str3[40];
+	strcpy(str2, str1);
+	strcpy(str3, "copy successful");
+	printf("str1: %s\nstr2: %s\nstr3: %s\n", str1, str2, str3);
+	strcpy(str2, "hgggggggggjkhg");
+	puts(str2);
+	return 0;
+}
+
+
+
+
+
+
+/*
+int main()
+{
+	char str[80];
+	strcpy(str, "these ");
+	puts(str);
+	strcat(str, "strings ");
+	puts(str);
+	strcat(str, "are ");
+	puts(str);
+	strcat(str, "concatenated.");
+	puts(str);
+	strcpy(str, "these ");
+	puts(str);
+	return 0;
+}
+
+
+
+/*
 #define MAX 100000
 int main()
 {
@@ -126,15 +196,15 @@ int main()
 	printf("a=%d,b=%d,c=%f", a, b, c);
 }
 /*
-class B0
+class B0//基类BO声明
 {
-public:
-	virtual void display()
+public://外部接口
+	virtual void display()//虚成员函数
 	{
 		cout << "B0" << endl;
 	}
 };
-class B1 :public B0
+class B1 :public B0//共有派生
 {
 public:
 	void display()
@@ -142,7 +212,7 @@ public:
 		cout << "B1" << endl;
 	}
 };
-class D1 :public B1
+class D1 :public B1//共有派生
 {
 public:
 	void display()
@@ -150,7 +220,7 @@ public:
 		cout << "D1" << endl;
 	}
 };
-void fun(B0 ptr)
+void fun(B0 ptr)  //普通函数
 {
 	ptr.display();
 }

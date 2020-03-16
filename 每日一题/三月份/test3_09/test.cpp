@@ -6,6 +6,27 @@
 #define MAX  100
 using namespace std;
 
+template<class T>class BigNumber {
+	long n;
+public:
+	BigNumber(T i):n(i){}
+	BigNumber operator+(BigNumber b)
+	{
+		return BigNumber(n + b.n);
+	}
+};
+int main()
+{
+	class BigNumber b1();
+	class BigNumber b2();
+	3 + 3;
+	b1 + 3;
+	b1 + b2;
+	3 + b1;
+}
+
+
+/*
 int main()
 {
 	int x;

@@ -2,6 +2,29 @@
 
 using namespace std;
 
+class AB
+{
+public:
+	AB(int)
+	{
+		cout << "AB()";
+	}
+	AB()
+	{
+		cout << "AB()";
+	}
+};
+
+
+int main()
+{
+	AB a(4);
+	AB b(5);
+	AB c[3];
+	AB* p[2] = { &a,&b };
+}
+
+/*
 int getnum(int x, int y)
 {
 	if (x == 0 || y == 0)

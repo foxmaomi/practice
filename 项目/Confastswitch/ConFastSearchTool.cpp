@@ -1,6 +1,8 @@
 #include"common.h"
 #include"Sysutil.h"
 #include"sqlite/sqlite3.h"
+#include"DataManager.h"
+#include"ScanManager.h"
 //#include"./sqlite/sqlite3.h"
 //#pragma comment(lib,"./sqlite/sqlite3.lib")
 void Test_DirectionList()
@@ -46,10 +48,93 @@ void Test_Sqlite()
 	sqlite3_close(db);
 }
 
+void Test_SqliteManager()
+{
+	SqliteManager sm;
+	sm.Open("doc.db");
+	//string sql = "create table if not exists doc_tb(id integer primary key autoincrement, doc_name text, doc_path text)";
+	//string sql = "create table if not exists doc_tb(id integer primary key autoincrement, doc_name text, doc_path text)";
+	//sm.ExeucteSql(sql);
+	//string sql1 = "insert into doc_tb values(null,'stl.pdf','c:\\')";
+	//sm.ExeucteSql(sql);
+	string sql = "select *from doc_tb";
+	int row = 0, col = 0;
+	char** ppRet = 0;
+	sm.GetResultTable(sql, row, col, ppRet);
+	for (int i = 0; i <= row; ++i)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			printf("%-10s", *(ppRet + (i * col) + j));
+		}
+		printf("\n");
+	}
+	sqlite3_free_table(ppRet);
+}
+
+void Test_Log()
+{
+	FILE* fp = fopen("Test.txt", "r");
+	if (fp == NULL)
+	{
+		TRACE_LOG("Open File Error.");
+		return;
+	}
+	else
+		TRACE_LOG("Open File Success.");
+	fclose(fp);
+}
+void Test_set()
+{
+	vector<int> v = { 5,8,9,3,5,5,5,5,7,5,8,4,2,10 };
+	//set<int> s;   //单重集合
+	multiset<int> s;
+	for (const auto& e : v)
+		s.insert(e);
+	auto it = s.begin();
+	while (it != s.end())
+	{
+		cout << *it << " ";
+		++it;
+	}
+	cout << endl;
+}
+void Test_Map()
+{
+	pair<int, string> p1 = { 1,"abc" };
+	pair<int, string> p2 = { 5,"xgy" };
+	pair<int, string> p3 = { 6,"yui" };
+	pair<int, string> p4 = { 4,"iks" };
+	pair<int, string> p5 = { 3,"uht" };
+	pair<int, string> p6 = { 2,"opl" };
+	pair<int, string> p7 = { 7,"uyw" };
+	//cout << p1.first << ":" << p1.second << endl;
+	map<int, string>mp;
+	mp.insert(p1);
+	mp.insert(p2);
+	mp.insert(p3);
+	mp.insert(p4);
+	mp.insert(p5);
+	mp.insert(p6);
+	mp.insert(p7);
+	for (const auto& e : mp)
+		cout << e.first << ":" << e.second << endl;
+}
+void Test_Scan()
+{
+	const string& path = "D:\\比特\\practice  仓库\\项目\\Confastswitch";
+	ScanManager sm;
+	sm.ScanDirectory(path);
+}
 int main()
 {
 	//Test_DirectionList();
-	Test_Sqlite();
+	//Test_Sqlite();
+	//Test_SqliteManager();
+	//Test_Log();
+	//Test_set();
+	//Test_Map();
+	Test_Scan();
 	return 0;
 }
 

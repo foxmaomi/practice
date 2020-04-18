@@ -142,6 +142,7 @@
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="ScanManager.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
+    <ClCompile Include="Sysframe.cpp" />
     <ClCompile Include="Sysutil.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="DataManager.h" />
     <ClInclude Include="ScanManager.h" />
     <ClInclude Include="sqlite\sqlite3.h" />
+    <ClInclude Include="Sysframe.h" />
     <ClInclude Include="Sysutil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

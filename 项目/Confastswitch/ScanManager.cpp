@@ -33,6 +33,7 @@ void ScanManager::ScanDirectory(const string& path)
 
 	//2扫描数据库文件系统
 	DataManager& m_db = DataManager::GetInstance();
+
 	multiset<string> db_set;
 	m_db.GetDocs(path, db_set);
 

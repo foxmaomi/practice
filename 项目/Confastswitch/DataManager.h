@@ -8,7 +8,6 @@ public:
 	~SqliteManager();//Îö¹¹º¯Êý
 public:
 	void Open(const string& path);
-	void Open(const string& path);
 	void Close();
 	void ExeucteSql(const string& sql);
 	void GetResultTable(const string& sql, int& row, int& col, char**& ppRet);
@@ -55,6 +54,8 @@ public:
 	void GetDocs(const string& path, multiset<string>& docs);
 	void DeleteDoc(const string& path, const string& doc);
 public:
+	static void SplitHighlight(const string& str, const string& key,
+		string& prefix, string& highlight, string& suffix);
 	void Search(const string& key, vector<pair<string, string>>& doc_path);
 private:
 	DataManager();

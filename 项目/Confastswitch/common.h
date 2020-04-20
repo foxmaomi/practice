@@ -16,6 +16,8 @@
 #include<chrono>
 #include<windows.h>
 
+#include<algorithm>
+
 using namespace std;
 #define SQL_BUFFER_SIZE 256
-#define MAX_TITLE_BUFFER 128
+#define MAX_TITLE_SIZE 128

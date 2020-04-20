@@ -7,6 +7,27 @@
 
 //#include"./sqlite/sqlite3.h"
 //#pragma comment(lib,"./sqlite/sqlite3.lib")
+char* title =(char*) "文档快速搜索工具";
+
+void Test_HighLight()
+{
+	string str = "123ABC比特科技，文档快速搜索工具，XYz服务就业6666";
+	//string key = "jiuye";
+	string key = "ssgj";
+	string prefix, highlight, suffix;
+	DataManager::SplitHighlight(str, key, prefix, highlight, suffix);
+	cout << prefix;
+	ColourPrintf(highlight.c_str());
+	cout << suffix << endl;
+}
+
+void main()
+{
+	Test_HighLight();
+}
+
+
+/*
 void Test_DirectionList()
 {
 	const string& path = "D:\\比特\\practice  仓库\\项目\\Confastswitch";

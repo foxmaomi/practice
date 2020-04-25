@@ -5,26 +5,79 @@
 #include"ScanManager.h"
 #include"Sysframe.h"
 
+char* title = (char*)"文档快速搜索工具";
+
+int main(int argc, char* argv[])
+{
+	const string& path = "D:\\比特\\数据结构课件";
+	//const string &path = "C:\\";
+
+	//创建扫描实例
+	ScanManager::CreateInstance(path).ScanDirectory(path);
+
+	//创建搜索实例
+	DataManager& dm = DataManager::GetInstance();
+
+	vector<pair<string, string>> doc_path;
+	string key;
+	while (1)
+	{
+		DrawFrame(title);
+		DrawMenu();
+		cin >> key;
+		if (key == "exit")
+			break;
+		dm.Search(key, doc_path);
+
+		int init_row = 5; //由界面决定
+		int count = 0;
+		string prefix, highlight, suffix;
+		for (const auto& e : doc_path)
+		{
+			string doc_name = e.first;
+			string doc_path = e.second;
+
+			DataManager::SplitHighlight(doc_name, key, prefix, highlight, suffix);
+
+			SetCurPos(2, init_row + count++);
+			//printf("%-31s", prefix.c_str());
+			cout << prefix;
+			ColourPrintf(highlight.c_str());
+			cout << suffix;
+
+			SetCurPos(33, init_row + count - 1);
+			printf("%-50s", doc_path.c_str());
+			//printf("%-31s%-50s\n",e.first.c_str(), e.second.c_str());
+		}
+		SystemEnd();
+		system("pause");
+	}
+	SystemEnd();
+	return 0;
+}
+
+
+
 //#include"./sqlite/sqlite3.h"
 //#pragma comment(lib,"./sqlite/sqlite3.lib")
-char* title =(char*) "文档快速搜索工具";
-
-void Test_HighLight()
-{
-	string str = "123ABC比特科技，文档快速搜索工具，XYz服务就业6666";
-	//string key = "jiuye";
-	string key = "ssgj";
-	string prefix, highlight, suffix;
-	DataManager::SplitHighlight(str, key, prefix, highlight, suffix);
-	cout << prefix;
-	ColourPrintf(highlight.c_str());
-	cout << suffix << endl;
-}
-
-void main()
-{
-	Test_HighLight();
-}
+//char* title =(char*) "文档快速搜索工具";
+//
+//void Test_HighLight()
+//{
+//	string str = "123ABC比特科技，文档快速搜索工具，XYz服务就业6666";
+//	//string key = "jiuye";
+//	string key = "ssgj";
+//	string prefix, highlight, suffix;
+//	DataManager::SplitHighlight(str, key, prefix, highlight, suffix);
+//	cout << prefix;
+//	ColourPrintf(highlight.c_str());
+//	cout << suffix << endl;
+//}
+//
+//void main()
+//{
+//	Test_HighLight();
+//}
 
 
 /*

@@ -108,7 +108,10 @@ void DataManager::InitSqlite()
 {
 	char sql[SQL_BUFFER_SIZE] = { 0 };
 	//sprintf(sql, "create table if not exists %s(id integer primary key autoincrement, doc_name text, doc_path text)", DOC_TABLE);
-	sprintf(sql, "create table if not exists %s(id integer primary key autoincrement, doc_name text, doc_path text)", DOC_TABLE);
+//	sprintf(sql, "create table if not exists %s(id integer primary key autoincrement, doc_name text, doc_path text)", DOC_TABLE);
+	sprintf(sql,
+		"create table if not exists %s(id integer primary key autoincrement, doc_name text, doc_path text, doc_pinyin text, doc_initials text)",
+		DOC_TABLE);
 	m_dbmgr.ExeucteSql(sql);
 }
 void DataManager::InsertDoc(const string& path, const string& doc)
@@ -166,6 +169,10 @@ void DataManager::Search(const string& key, vector<pair<string, string>>& doc_pa
 	string pinyin = ChineseConvertPinYinAllSpell(key);
 	string initials = ChineseConvertPinYinInitials(key);
 	
+	sprintf(sql,
+		"select doc_name, doc_path from %s where doc_pinyin like '%%%s%%' or doc_initials like '%%%s%%'",
+		DOC_TABLE, pinyin.c_str(), initials.c_str());
+
 	int row = 0, col = 0;
 	char** ppRet = nullptr;
 	//m_dbmgr.GetResultTable(sql, row, col, ppRet);

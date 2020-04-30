@@ -73,10 +73,30 @@ namespace bit
 			m_str[m_size] = '\0';
 		}
 	public:
-		string& operator+=(char c);
-		void append(const char* str);
-		string& operator+=(const char* str);
-		void resize(size_t newSize, char c = '\0');
+		string& operator+=(char c)
+		{
+			push_back(c);
+			return *this;
+		}
+		void append(const char* str)  //×Ö·û´®×·¼Ó
+		{
+			int str_len = strlen(str);
+			if (str_len + m_size > m_capacity)
+			{
+				reserve((m_capacity + str_len) * 2);
+			}
+			strcpy(m_str + m_size, str);
+			m_size += str_len;
+		}
+		string& operator+=(const char* str)
+		{
+			append(str);
+			return *this;
+		}
+		void resize(size_t newSize, char c = '\0')
+		{
+
+		}
 		const char& operator[](size_t index)const;
 		bool operator<(const string& s);
 		bool operator<=(const string& s);

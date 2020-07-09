@@ -38,6 +38,53 @@ public:
 	}
 protected:
 	bool Insert(AVLNode<Type>*& t, const Type &x);
+protected:
+	void RotateL(AVLNode<Type>*& ptr)
+	{
+		AVLNode<Type>* subL = ptr;
+		ptr = ptr->rightChild;    //走到中间节点
+		subL->rightChild = ptr->leftChild; //  断开不平衡节点的右树
+		ptr->leftChild = subL;    //把不平衡节点链接到中间节点的左树
+		//????为什么不直接赋一个空指针
+		ptr->bf = subL->bf = 0;    //调整平衡因子
+
+	}
+	void RotateR(AVLNode<Type>* ptr)
+	{
+		AVLNode<Type>* subR = ptr;
+		ptr = ptr->leftChild;
+		subR->leftChild = ptr->rightChild;
+		ptr->rightChild = subR;
+		ptr->bf = subR->bf = 0;
+	}
+	void RotateLR(AVLNode<Type>*& ptr)
+	{
+		AVLNode<Type>* subL = ptr->leftChild;
+		AVLNode<Type>* subR = ptr;
+		ptr = subL->rightChild;
+
+		//先左转
+		subL->rightChild = ptr->leftChild;
+		ptr->leftChild = subL;
+		//subL bf
+		if (ptr->bf == 1)
+			subL->bf = -1;
+		else
+			subL->bf = 0;
+
+		//后右转
+		subR->leftChild = ptr->rightChild;
+		ptr->rightChild = subR;
+		//subR bf
+		if (ptr->bf == -1)
+			subR->bf = 1;
+		else
+			subR->bf = 0;
+
+		ptr->bf = 0;
+		
+		
+	}
 
 private:
 	AVLNode<Type>* root;
@@ -85,11 +132,11 @@ bool AVLTree<Type>::Insert(AVLNode<Type>*& t, const Type& x)
 			break;
 		if (pr->bf == 1 || r->bf == -1)
 			p = pr;     //????????n   向上回溯，对上一个结点进行平衡因子的检测
-	}
+	
 	else
 	{
 		//旋转调整
-		if(pr->bf>0)
+		if (pr->bf > 0)
 		{
 			if (p->bf > 0)//  \左单旋转
 			{
@@ -108,8 +155,21 @@ bool AVLTree<Type>::Insert(AVLNode<Type>*& t, const Type& x)
 			}
 			else
 			{
-				RotateLR(pr);//    <      
+				RotateLR(pr);//    <        先左后右
 			}
 		}
+		break;
 	}
+}
+	if (st.empty())
+		t = pr;
+	else
+	{
+		AVLNode<Type>* ppr = st.top();
+		if (ppr->data > pr->data)
+			ppr->leftChild = pr;
+		else
+			ppr->rightChild = pr;
+	}
+	return true;
 }

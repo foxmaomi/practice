@@ -3,6 +3,28 @@
 
 using namespace std;
 
+int main()
+{
+	int a, b, c, d;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	cin >> d;
+	int ret = 0;
+	char ar[4] = { '+','-','*','/' };
+	int i = 0;
+	int j = 0;
+	//ret = 7ar[0]4;
+	for (i = 0; i < 4; i++)
+	{
+		ret = a + b;
+		ret = a - b;
+
+	}
+	//cout << a << " " << b << " " << c << " " << d;
+}
+
+/*
 namespace bit
 {
 	template<typename T>
